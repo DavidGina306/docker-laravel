@@ -14,7 +14,10 @@ services:
       - laravel
 
   php:
-    build: 
+    build:
+     args:
+      user: www
+      uid: 1000 
       context: .
       dockerfile: Dockerfile-php
     volumes:
