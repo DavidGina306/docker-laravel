@@ -7,21 +7,20 @@ services:
       - "80:80"
     volumes:
       - ./nginx:/etc/nginx/conf.d
-      - ../:/var/www/html
+      - ./app/projeto1:/var/www/html/projeto1
+      - ./app/projeto2:/var/www/html/projeto2
     depends_on:
       - php
     networks:
       - laravel
 
   php:
-    build:
-     args:
-      user: www
-      uid: 1000 
+    build: 
       context: .
       dockerfile: Dockerfile-php
     volumes:
-      - ../:/var/www/html
+      - ./app/projeto1:/var/www/html/projeto1
+      - ./app/projeto2:/var/www/html/projeto2
     networks:
       - laravel
 

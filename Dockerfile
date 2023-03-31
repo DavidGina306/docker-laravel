@@ -32,7 +32,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g npm
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/app
 
 CMD ["php-fpm"]
 
